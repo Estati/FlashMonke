@@ -54,55 +54,6 @@ namespace QuickDisconnectBananaOS
                     selectionHandler.MoveSelectionUp();
                     break;
 
-                case WatchButtonType.Right:
-                    if (selectionHandler.currentIndex == 1)
-                    {
-                        if (Force > 250)
-                        {
-                            Force -= 1f;
-                        }
-                        else
-                        {
-                            Force += 1f;
-                        }
-                    }
-                    if (selectionHandler.currentIndex == 2)
-                    {
-                        if (ForceM > 250)
-                        {
-                            ForceM -= 1f;
-                        }
-                        else
-                        {
-                            ForceM += 1f;
-                        }
-                    }
-                    break;
-                case WatchButtonType.Left:
-                    if (selectionHandler.currentIndex == 1)
-                    {
-                        if (Force < 1)
-                        {
-                            Force += 1f;
-                        }
-                        else
-                        {
-                            Force -= 1f;
-                        }
-                    }
-                    if (selectionHandler.currentIndex == 2)
-                    {
-                        if (ForceM < 1)
-                        {
-                            ForceM += 1f;
-                        }
-                        else
-                        {
-                            ForceM -= 1f;
-                        }
-                    }
-                    break;
-
 
                 case WatchButtonType.Enter:
                     if (selectionHandler.currentIndex == 0)
@@ -121,8 +72,8 @@ namespace QuickDisconnectBananaOS
             // thanks for the gamemode check dean!
             if (IsEnabled && PhotonNetwork.CurrentRoom.CustomProperties["gameMode"].ToString().Contains("MODDED_"))
             {
-                GorillaLocomotion.Player.Instance.maxJumpSpeed = Force;
-                GorillaLocomotion.Player.Instance.jumpMultiplier = ForceM;
+                GorillaLocomotion.Player.Instance.maxJumpSpeed = 8;
+                GorillaLocomotion.Player.Instance.jumpMultiplier = 2;
             }
         }
     }
